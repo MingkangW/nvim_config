@@ -13,7 +13,7 @@ return {
             { id = "stacks", size = 0.25 },
             { id = "watches", size = 0.25 },
           },
-          size = 40,
+          size = 30,
           position = "left",
         },
         {
@@ -23,6 +23,14 @@ return {
           },
           size = 10,
           position = "bottom",
+        },
+        {
+          elements = {
+            -- {id = "console", size = 1},
+            {id = "repl", size = 1},
+          },
+          size = 100,
+          position = "right",
         },
       },
       controls = {
