@@ -1,17 +1,11 @@
 return {
   {
-    "mcchrish/zenbones.nvim",
-    dependencies = { "rktjmp/lush.nvim" },
+    "NLKNguyen/papercolor-theme",
     lazy = false,
     priority = 1000,
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "PaperColor",
-    },
-    init = function()
+    config = function (_, opts)
+      vim.cmd.colorscheme("PaperColor")
       vim.o.background = "light"
-    end,
-  },
+    end
+  }
 }
