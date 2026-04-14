@@ -5,11 +5,24 @@
 ## Layout
 
 - `bin/nvim-portable`: 统一启动入口，自动设置仓库内的 `XDG_*` 目录
+- `bin/tmux-portable`: 统一启动 tmux，并导出仓库根路径给 portable tmux 配置
 - `nvim/`: LazyVim-based Neovim 配置
 - `tmux/tmux.conf`: tmux 配置
 - `lazyvim_usage.md`: 使用笔记
 
 ## Install
+
+首次拉取仓库时，如果需要 tmux 主题，请记得连同 submodule 一起初始化：
+
+```bash
+git clone --recurse-submodules <your-repo-url>
+```
+
+如果仓库已经拉下来了，再补一次：
+
+```bash
+git submodule update --init --recursive
+```
 
 推荐 Neovim 版本：
 
@@ -63,11 +76,25 @@ conda install -c conda-forge lua=5.1.5 luarocks stylua
 
 ## Tmux
 
-加载 tmux 配置：
+推荐统一从仓库入口启动：
 
 ```bash
-tmux source-file /path/to/nvim_config/tmux/tmux.conf
+./bin/tmux-portable
 ```
+
+如果你已经在 tmux 会话里，也可以重新加载：
+
+```bash
+PORTABLE_CONFIG_ROOT=/path/to/nvim_config tmux source-file /path/to/nvim_config/tmux/tmux.conf
+```
+
+说明：
+
+- `tmux/plugins/catppuccin/tmux/` 以 git submodule 方式固定到 `catppuccin/tmux v2.1.3`
+- 主题配置拆分在 `tmux/themes/` 下，当前默认主题是 `catppuccin`
+- `tmux/tmux.conf` 只保留基础配置和主题入口，后续扩展新主题只需新增一个 theme 文件
+- 默认启用 `catppuccin` 的 `mocha` 风格和 rounded window status
+- 建议安装 Nerd Font 以正确显示图标
 
 ## Python
 
