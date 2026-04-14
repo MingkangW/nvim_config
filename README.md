@@ -18,7 +18,7 @@
 主工具：
 
 ```bash
-conda install -c ripgrep tree-sitter-cli fd-find ty lua-language-server ruff vscode-langservers-extracted
+conda install -c conda-forge ripgrep tree-sitter-cli fd-find ty lua-language-server ruff vscode-langservers-extracted
 ```
 
 调试支持：
