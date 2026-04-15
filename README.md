@@ -98,9 +98,10 @@ prefix + I
 
 说明：
 
-- `tmux/plugins/tpm/` 以 git submodule 方式固定 TPM 本体
+- `submodules/tpm/` 以 git submodule 方式固定 TPM 本体
 - 其他 tmux 插件由 TPM 安装到仓库内 `.local/share/tmux/plugins/`
 - `tmux/tmux.conf` 仅保留基础配置和 TPM 加载逻辑
+- `tmux/` 只保留 tmux 配置文件；仓库级 submodule 统一放在 `submodules/`
 - `tmux/themes/` 可用于存放你后续自己维护的主题配置
 - 建议安装 Nerd Font 以正确显示图标
 
