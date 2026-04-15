@@ -12,7 +12,7 @@
 
 ## Install
 
-首次拉取仓库时，如果需要 tmux 主题，请记得连同 submodule 一起初始化：
+首次拉取仓库时，如果需要 tmux portable 运行时，请记得连同 submodule 一起初始化：
 
 ```bash
 git clone --recurse-submodules <your-repo-url>
@@ -85,15 +85,23 @@ conda install -c conda-forge lua=5.1.5 luarocks stylua
 如果你已经在 tmux 会话里，也可以重新加载：
 
 ```bash
-PORTABLE_CONFIG_ROOT=/path/to/nvim_config tmux source-file /path/to/nvim_config/tmux/tmux.conf
+PORTABLE_CONFIG_ROOT=/path/to/nvim_config \
+TMUX_PLUGIN_MANAGER_PATH=/path/to/nvim_config/.local/share/tmux/plugins \
+tmux source-file /path/to/nvim_config/tmux/tmux.conf
+```
+
+首次进入 tmux 后，请使用 TPM 安装声明的插件：
+
+```bash
+prefix + I
 ```
 
 说明：
 
-- `tmux/plugins/catppuccin/tmux/` 以 git submodule 方式固定到 `catppuccin/tmux v2.1.3`
-- 主题配置拆分在 `tmux/themes/` 下，当前默认主题是 `catppuccin`
-- `tmux/tmux.conf` 只保留基础配置和主题入口，后续扩展新主题只需新增一个 theme 文件
-- 默认启用 `catppuccin` 的 `mocha` 风格和 rounded window status
+- `tmux/plugins/tpm/` 以 git submodule 方式固定 TPM 本体
+- 其他 tmux 插件由 TPM 安装到仓库内 `.local/share/tmux/plugins/`
+- `tmux/tmux.conf` 仅保留基础配置和 TPM 加载逻辑
+- `tmux/themes/` 可用于存放你后续自己维护的主题配置
 - 建议安装 Nerd Font 以正确显示图标
 
 ## Python
