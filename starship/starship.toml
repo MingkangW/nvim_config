@@ -1,19 +1,28 @@
 add_newline = false
 
-format = "$directory$git_branch$git_status$python$character"
+format = "$conda$directory$git_branch$git_status$character"
 
 [directory]
-truncation_length = 3
+truncation_length = -1
 truncate_to_repo = false
+style = "bold #38BDF8"
 
 [git_branch]
-symbol = "git:"
+# symbol = "git:"
+style = "bold #FB8500"
 
-[python]
-format = " [py:$virtualenv]($style)"
-detect_extensions = []
-detect_folders = []
+[git_status]
+style = "bold #38BDF8"
+
+# [python]
+# format = " [py:$virtualenv]($style)"
+# detect_extensions = []
+# detect_folders = []
 
 [character]
-success_symbol = "[>](bold green)"
-error_symbol = "[>](bold red)"
+success_symbol = "[√](bold #00a600)"
+error_symbol = "[×](bold #c00000)"
+
+[conda]
+format = '[\($environment\)](bold #FB8500) '
+ignore_base = false
