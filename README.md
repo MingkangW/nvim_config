@@ -105,6 +105,31 @@ prefix + I
 - `tmux/themes/` 可用于存放你后续自己维护的主题配置
 - 建议安装 Nerd Font 以正确显示图标
 
+## Shell Integration
+
+如果你想把 portable 环境变量和 alias 统一收拢到 shell 初始化里，可以在 `~/.bashrc` 或 `~/.zshrc` 中 source：
+
+```bash
+source /path/to/nvim_config/bin/portable-env.sh
+eval "$(starship init bash)"
+```
+
+这个脚本会导出：
+
+- `PORTABLE_CONFIG_ROOT`
+- `STARSHIP_CONFIG`
+
+并定义：
+
+- `alias nvim=/path/to/nvim_config/bin/nvim-portable`
+- `alias tmux=/path/to/nvim_config/bin/tmux-portable`
+
+说明：
+
+- `portable-env.sh` 只负责 shell 级共享变量和 alias
+- `nvim-portable` / `tmux-portable` 仍负责各自命令的运行时隔离
+- 不会全局导出 `XDG_CONFIG_HOME`、`XDG_DATA_HOME`、`XDG_STATE_HOME`、`XDG_CACHE_HOME`
+
 ## Python
 
 - 默认 LSP: `ty`

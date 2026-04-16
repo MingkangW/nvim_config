@@ -1,0 +1,19 @@
+add_newline = false
+
+format = "$directory$git_branch$git_status$python$character"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+symbol = "git:"
+
+[python]
+format = " [py:$virtualenv]($style)"
+detect_extensions = []
+detect_folders = []
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"

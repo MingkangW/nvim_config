@@ -8,9 +8,8 @@ export PORTABLE_CONFIG_ROOT="$ROOT_DIR"
 export XDG_CONFIG_HOME="$ROOT_DIR"
 export XDG_DATA_HOME="$ROOT_DIR/.local/share"
 export XDG_STATE_HOME="$ROOT_DIR/.local/state"
-export XDG_CACHE_HOME="$ROOT_DIR/.cache"
 
-mkdir -p "$XDG_DATA_HOME" "$XDG_STATE_HOME" "$XDG_CACHE_HOME"
+mkdir -p "$XDG_DATA_HOME" "$XDG_STATE_HOME"
 
 if command -v nvim >/dev/null 2>&1; then
   exec nvim -u "$ROOT_DIR/nvim/init.lua" "$@"
