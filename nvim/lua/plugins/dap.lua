@@ -19,4 +19,10 @@ return {
       dap.listeners.before.event_exited["dapui_config"] = nil
     end,
   },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    opts = {
+      virt_text_pos = "eol"
+    },
+  },
 }

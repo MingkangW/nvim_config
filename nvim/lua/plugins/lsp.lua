@@ -5,6 +5,8 @@ return {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       opts.diagnostics = opts.diagnostics or {}
+      opts.inlay_hints = opts.inlay_hints or {}
+      opts.inlay_hints.enabled = false
       -- 关闭行尾虚拟文本，避免在每一行后面铺满错误/警告说明。
       -- 这是实现“默认不显示详细诊断文本”的核心配置。
       opts.diagnostics.virtual_text = {
