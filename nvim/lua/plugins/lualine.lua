@@ -3,8 +3,8 @@ return {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
       opts.options = opts.options or {}
-      -- opts.options.theme = "onelight"
-      opts.options.theme = "auto"
+      opts.options.theme = "onelight"
+      -- opts.options.theme = "auto"
 
       -- 去掉厚重的块状分隔符，让浅色状态栏看起来更干净。
       opts.options.section_separators = { left = "", right = "" }
