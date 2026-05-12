@@ -4,7 +4,7 @@ return {
         require('minuet').setup {
           -- Your configuration options here
           virtualtext = {
-            auto_trigger_ft = { "python", "lua" },
+            auto_trigger_ft = { "python", "lua", "bash", "sh" },
             keymap = {
                 -- accept whole completion
                 accept = '<A-A>',
