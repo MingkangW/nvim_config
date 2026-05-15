@@ -46,7 +46,7 @@ git submodule update --init --recursive
 主工具：
 
 ```bash
-conda install -c conda-forge ripgrep tree-sitter-cli fd-find ty lua-language-server ruff vscode-langservers-extracted
+conda install -c conda-forge ripgrep tree-sitter-cli fd-find ty lua-language-server ruff vscode-langservers-extracted markdownlint-cli2
 ```
 
 调试支持：
