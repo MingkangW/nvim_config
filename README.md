@@ -8,6 +8,8 @@
 - `nvim/`: LazyVim-based Neovim 配置
 - `tmux/tmux.conf`: tmux 配置
 - `starship/starship.toml`: starship 配置
+- `zsh/.zshrc`: Zsh 启动配置
+- `zsh/oh-my-zsh-custom/`: Oh My Zsh 自定义插件、主题和函数
 - `lazyvim_usage.md`: 使用笔记
 
 ## Install
@@ -36,8 +38,10 @@ git submodule update --init --recursive
 - `~/.tmux.conf -> <repo>/tmux/tmux.conf`
 - `~/.config/starship.toml -> <repo>/starship/starship.toml`
 - `~/.tmux/plugins/tpm -> <repo>/submodules/tpm`
+- `~/.zshrc` 保留原文件，自动追加对 `<repo>/zsh/.zshrc` 的引用
+- `~/.oh-my-zsh/custom -> <repo>/zsh/oh-my-zsh-custom`（仅在已安装 Oh My Zsh 时创建）
 
-如果你之前在 `~/.bashrc` 或 `~/.zshrc` 里写过旧的 alias、wrapper 或 `source` 逻辑，现在可以一并删除，安装后直接使用系统的 `nvim` 和 `tmux` 即可。
+Oh My Zsh 本体需要先单独安装；安装脚本只管理 `~/.zshrc` 和 Oh My Zsh 的 `custom/` 目录，不会复制或覆盖 Oh My Zsh 本体。安装脚本不会覆盖 `~/.zshrc`，只会追加一次对仓库 `.zshrc` 的引用。现有 `~/.zshrc` 仍是每台机器自己的入口；仓库 `.zshrc` 只放通用配置，Conda、代理、私有路径等机器相关设置继续保留在系统自己的 `~/.zshrc` 中。若目标文件或目录已存在，脚本会先备份成 `*.bak.<timestamp>`。
 
 推荐 Neovim 版本：
 
